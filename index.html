@@ -3,56 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paper Review</title>
+    <title>AS-70 Paper Review</title>
 </head>
 <body>
 
-    <h1>Paper Review: Title of the Paper</h1>
+    <h1>AS-70 Paper Review</h1>
 
-    <section>
-        <h2>Introduction</h2>
-        <p>This section provides an introduction to the paper.</p>
-        <audio controls>
-            <source src="audio/introduction.mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
-        </audio>
+    <a href="https://github.com/as70review/code">code github repo</a> 
+
+    <section style="margin-bottom: 40px;">
+        <h2>Speech audio examples</h2>
+        <p>This section provides a few speech audio snippets in the AS-70 dataset. Paper section 2.2</p>
+
+        <section>
+            <h3>Mild</h3>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tr>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Conversation</h4>            
+                            <audio controls>
+                                <source src="audio\examples\mild\conversation_A_0620.wav" type="audio/wav">
+                            </audio>
+                            <p>Transcription: 他们那里是在小/b学三/b年级，他就开始学习英/b语[英语]了，然后。(They start learning English in the third grade there, and then.)</p>
+                        </td>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Command</h4>            
+                            <audio controls>
+                                <source src="audio\examples\mild\command_0095.wav" type="audio/wav">
+                            </audio>
+                            <p>Transcription: 导航到城南嘉/p盛福特四S店。(Navigate to Chengnan Jiasheng Ford 4S Store.)</p>
+                        </td>
+                    </tr>
+                </table>
+        </section>
+
+        <section>
+            <h3>Moderate</h3>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tr>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Conversation</h4>            
+                            <audio controls>
+                                <source src="audio\examples\moderate\conversation_A_0153.wav" type="audio/wav">
+                            </audio>
+                            <p>Transcription: 因为我就是[就是]目前感[目前感]受到的话就是人多，哦对，还[还]有[还有/p还有]另外一个方面就是它的工资相对来说不是那么高。(The main thing I feel right now is that there are too many people. Oh, right, another thing is that the salary is not that high.)</p>
+                        </td>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Command</h4>            
+                            <audio controls>
+                                <source src="audio\examples\moderate\command_0331.wav" type="audio/wav">
+                            </audio>
+                            <p>Transcription: 播放天上掉个猪八/b[猪八]戒。(Play the song "Tian Shang Diao Ge Zhu Ba Jie")</p>
+                        </td>
+                    </tr>
+                </table>
+        </section>
+
+        <section>
+            <h3>Severe</h3>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tr>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Conversation</h4>            
+                            <audio controls>
+                                <source src="audio\examples\severe\conversation_A_0085.wav" type="audio/wav">
+                            </audio>
+                            <p>Transcription: 总体/p[总体/p]来[来]说，深圳还是/p挺[挺/p挺]不[挺不]错[挺不/r挺不错]的就是。(Overall, Shenzhen is still pretty good.)</p>
+                        </td>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Command</h4>            
+                            <audio controls>
+                                <source src="audio\examples\severe\command_0088.wav" type="audio/wav">
+                            </audio>
+                            <p>Transcription: 北[北北北北]京[京]赛/p特[特特特/r]奥莱[莱莱莱莱]。(Beijing Scitech Outlet)</p>
+                        </td>
+                    </tr>
+                </table>
+        </section>
     </section>
 
-    <section>
-        <h2>Methodology</h2>
-        <p>This section outlines the methodology used in the research.</p>
-        <audio controls>
-            <source src="audio/methodology.mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
-        </audio>
+    <hr>
+
+    <section style="margin-bottom: 40px;">
+        <h2>Automatic Speech Recognition (ASR) results</h2>
+        <p>This section provides ASR model results. Paper section 3.2</p>
+
+        <section>
+            <h3>Conformer Wenetspeech model</h3>
+
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tr>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Conversation</h4>            
+                            <audio controls>
+                                <source src="audio\asr\conversation_A_0231.wav" type="audio/wav">
+                            </audio>
+                            <ul>
+                                <li>Ground truth: 我是在那个江西的一个 (I am from a place in Jiangxi)</li>
+                                <li>Pretrained 50% WER: 我是在个江阳气的歌</li>
+                                <li>Finetuned 20% WER: 嗯我是在那个江西的一个歌</li>
+                            </ul>
+                        </td>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Command</h4>            
+                            <audio controls>
+                                <!-- 0010/command_0040 -->
+                                <source src="audio\asr\command_0040.wav" type="audio/wav">
+                            </audio>
+                            <ul>
+                                <li>Ground truth: 明天早上六点十五分吃稀饭 (Eat congee at 6:15 AM tomorrow morning)</li>
+                                <li>Pretrained 41.67% WER: 明天早早上六六点十五分只吃洗洗饭</li>
+                                <li>Finetuned 0% WER: 明天早上六点十五分吃稀饭</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+        </section>
+
+        <section>
+            <h3>Chinese-hubert-large Wenetspeech model</h3>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tr>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Conversation</h4>            
+                            <audio controls>
+                                <!--  /0006/conversation_A_0152 -->
+                                <source src="audio\asr\conversation_A_0152.wav" type="audio/wav">
+                            </audio>
+                            <ul>
+                                <li>Ground truth: 嗯我们的话先给他看一些那种那种就是相关的一些就是 (Well, let's show him some of those, those are related, right)</li>
+                                <li>AISHELL1 finetuned 58.33% WER: 我们的画或花欣给他看一些内种内容就是相关的一相关的一些董事</li>
+                                <li>AS-70 finetuned 16.67% WER: 我们的话先给它看一些那种就是相关的一些就是</li>
+                            </ul>
+                        </td>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Command</h4>            
+                            <audio controls>
+                                <!-- /0010/command_0053 -->
+                                <source src="audio\asr\command_0053.wav" type="audio/wav">
+                            </audio>
+                            <ul>
+                                <li>Ground truth: 关闭语音 (Turn off voice)</li>
+                                <li>AISHELL1 finetuned 100% WER: 观关闭于疑因</li>
+                                <li>AS-70 finetuned 0% WER: 关闭语音</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+        </section>
+
+        <section>
+            <h3>Whisper large-v2 model</h3>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <tr>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Conversation</h4>            
+                            <audio controls>
+                                <!-- /0006/conversation_A_0162 -->
+                                <source src="audio\asr\conversation_A_0162.wav" type="audio/wav">
+                            </audio>
+                            <ul>
+                                <li>Ground truth: 想法然后画出来的一些 这些图吗然后可以用来就是一种进行的一进行一种那种参考我觉得 (I think these are some pictures that are drawn from ideas, and then they can be used as a reference for a kind of)</li>
+                                <li>Pretrained 1064% WER: 想法然后画出来的一些些些 这些图嘛然后可可以用来就是一种进行的一进 行 一 一 一 一 一 一 一 一 一 一 
+                一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一
+                一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一
+                一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一
+                一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一
+                一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一 一
+                一</li>
+                                <li>Finetuned 5.13% WER: 想法然后画出来的一些 这些图嘛然后可以用来就是一种进行的 进行一种那种参考我觉得</li>
+                            </ul>
+                        </td>
+                        <td style="border: 1px solid black; width: 50%;">
+                            <h4>Command</h4>            
+                            <audio controls>
+                                <!-- /0010/command_0144 -->
+                                <source src="audio\asr\command_0144.wav" type="audio/wav">
+                            </audio>
+                            <ul>
+                                <li>Ground truth: 听真的爱你 (Listen to I Really Love You)</li>
+                                <li>Pretrained 4420% WER: 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 
+                听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听
+                听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听
+                听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听 听</li>
+                                <li>Finetuned 40% WER: 听转身的爱你</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+        </section>
+
     </section>
 
-    <section>
-        <h2>Results</h2>
-        <p>Here are the results obtained from the experiments.</p>
-        <audio controls>
-            <source src="audio/results.mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
-        </audio>
-    </section>
+    <hr>
 
-    <section>
-        <h2>Discussion</h2>
-        <p>This section discusses the implications and significance of the results.</p>
-        <audio controls>
-            <source src="audio/discussion.mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
-        </audio>
-    </section>
+    <section style="margin-bottom: 40px;">
+        <h2>Stuttering Event Detection (SED) results</h2>
+        <p>This section provides SED model results. conv: conversation, comm: commands. Each cell shows the F1-score (%). Paper section 3.3</p>
 
-    <section>
-        <h2>Conclusion</h2>
-        <p>A summary of the key findings and conclusion of the paper.</p>
-        <audio controls>
-            <source src="audio/conclusion.mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
-        </audio>
-    </section>
+        <section>
+            <h3>StutterNet model</h3>
+            <img src="table\stutternet.png" style="width: 50%;">
+        </section>
 
+        <section>
+            <h3>Conformer model</h3>
+            <img src="table\conformer.png" style="width: 50%;">
+        </section>
+
+        <section>
+            <h3>wav2vec2 model</h3>
+            <img src="table\conformer.png" style="width: 50%;">
+        </section>
+
+    </section>
 </body>
 </html>
